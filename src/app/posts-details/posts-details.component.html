@@ -1,0 +1,32 @@
+<div class="example-container mat-elevation-z8">
+    <h2>Dettagli dei Post</h2>
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+      <a  [routerLink]="['/posts']">Indietro</a>
+    </div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title><h2>{{postsDetails[0].name}}</h2></mat-card-title>
+      </mat-card-header> 
+      <mat-card-content>
+        <dl>
+        <div class="name">  
+            <dt>Nome:</dt>
+            <dd>{{postsDetails[0].name}}</dd>
+        </div>
+        <div class="email">
+            <dt>Email:</dt>
+            <dd>{{postsDetails[0].email}}</dd>
+        </div>
+      <div  class="description">
+        <dt>Descrizione:</dt>
+        <dd>{{postsDetails[0].body}}</dd>
+      </div>
+     
+        </dl>
+      </mat-card-content>
+    </mat-card>
+  </div>
