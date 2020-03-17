@@ -1,6 +1,57 @@
 .example-container {
   position: relative;
   padding: 5px;
+  h2{
+    text-align: center;
+  }
+  div.button-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    a {
+      text-decoration: none;
+    }
+  }
+  mat-card {
+    mat-card-header {
+      div.mat-card-header-text {
+        mat-card-title {
+          h2 {
+            text-transform:capitalize;
+          }
+        }
+      }
+    }
+    mat-card-content {
+      dl {
+        div.name {
+            display: flex;
+            justify-content: flex-start;
+            dt:nth-child(1) {
+              font-weight: bold;
+            }
+
+        }
+        div.email {
+          display: flex;
+          justify-content: flex-start;
+          dt:nth-child(1) {
+            font-weight: bold;
+          }
+          
+      }
+          div.description {
+          display: flex;
+          justify-content: flex-start;
+          dt:nth-child(1) {
+            font-weight: bold;
+          }
+          
+      }
+      }
+    }  
+  }  
 }
 
 .example-loading-shade {
@@ -19,3 +70,4 @@
 .mat-flat-button {
   margin: 5px;
 }
+
