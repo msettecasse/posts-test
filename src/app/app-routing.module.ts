@@ -4,7 +4,7 @@ import {PostsComponent} from './posts/posts.component';
 import {PostsDetailsComponent} from './posts-details/posts-details.component';
 const routes: Routes = [
   {
-    path:'posts',
+    path:'',
     component:PostsComponent,
     data:{ title: 'Posts'}
   },

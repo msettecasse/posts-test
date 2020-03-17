@@ -16,17 +16,31 @@ export class PostsDetailsComponent implements OnInit {
     body: ''
   };
   isLoadingResults = true;
-  constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
+  constructor(private route: ActivatedRoute,
+     private api: ApiService,
+      private router: Router
+      ) { 
+      }
+      
+  ngOnInit(): void {
+        this.getPostsDetails(this.route.snapshot.params.id);
+      }
   getPostsDetails(id: string) {
+    let parent = this;
+    this.isLoadingResults = true;
     this.api.getPostsById(id)
       .subscribe((data: any) => {
         this.postsDetails = data;
         console.log(this.postsDetails);
         this.isLoadingResults = false;
-      });
-  }
-  ngOnInit(): void {
-    this.getPostsDetails(this.route.snapshot.params.id);
-  }
+  }, err => {
+    console.log(err);
+    this.isLoadingResults = false;
+
+});
+
+
+}
+
 
 }
